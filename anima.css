@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+
+  font-family: "Roboto Mono", sans-serif;
+  background-color: black;
+  color: white;
+}
+h1 {
+  text-align: center;
+  
+  border-right: solid 3px white;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Source Code Pro", monospace;
+  font-size: 28px;
+  color: white;
+  margin: 0 auto;
+  margin-top: 26px;
+}
+.heading {
+  text-align: center;
+  font-size: 45px;
+  margin-top: 80px;
+}
+.forms {
+  background-color: white;
+  color: grey;
+  height: 100%;
+  width: 22%;
+  margin: auto;
+  margin-top: 35px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+h2 {
+  text-align: center;
+  font-size: 33px;
+
+  width: 100%;
+}
+input {
+  margin: 10px;
+  margin-left: 33px;
+  width: 85%;
+  padding: 9px;
+  border-radius: 6px;
+  border: 0px;
+  background-color: rgb(233, 237, 238);
+}
+button {
+  width: 95%;
+  margin: 10px;
+  margin-left: 33px;
+  padding: 14px;
+  background-color: orange;
+  border: 0px;
+  border-radius: 4px;
+  color: white;
+}
+h1 {
+  animation: animated-text 3s steps(19, end) 1s 1 normal both,
+    animated-cursor 600ms steps(19, end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 320px;
+  }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: white;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}

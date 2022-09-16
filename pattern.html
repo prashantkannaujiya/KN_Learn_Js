@@ -1,0 +1,32 @@
+<html>
+    <head>
+<style>
+    body{
+        font-size:35px;
+    }
+</style>
+    </head>
+    <body>
+        <script>
+            var lines=+prompt('enter number of lines ')
+            for(var i=1;i<=lines;i++)
+            { var b=[];
+for(var j=i;j<lines;j++)
+{
+    var p=document.createElement('span');
+ 
+p.innerHTML='&nbsp';
+document.querySelector('body').appendChild(p);
+}
+for(var k=1;k<=i;k++){
+    var p=document.createElement('span');
+p.innerHTML='*';
+document.querySelector('body').appendChild(p);
+}
+
+var p=document.createElement('br');
+document.querySelector('body').appendChild(p);
+            }
+        </script>
+    </body>
+</html>

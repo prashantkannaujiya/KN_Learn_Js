@@ -1,0 +1,54 @@
+<html>
+    <head>
+<style>
+    table{
+       
+        margin:auto;
+        margin-top:20px;
+    }
+    td{
+        background-color: aquamarine;
+    }
+</style>
+
+    </head>
+    <body>
+        <label>Enter the product name</label>
+        <input type="text" id="t1">
+        <label>Enter the price</label>
+        <input type="text" id="t2">
+        <button onclick="process(this)">OK</button>
+        <table id="tt" >
+
+        </table>
+        <h1 id="bb"></h1>
+    <script>
+        var ar=[];
+        function process(t)
+        {
+var k=document.getElementById('t1').value;
+var k1=document.getElementById('t2').value;
+console.log(k);
+console.log(k1);
+var p=document.createElement('tr');
+var p1=document.createElement('td');
+var p2=document.createElement('td');
+document.getElementById('tt').append(p);
+p1.innerHTML=k;
+p2.innerHTML=k1;
+p.append(p1);
+p.append(p2);
+ar.push(k1);
+var sum=0;
+ar.forEach(function(a){
+sum=sum+parseInt(a);
+});
+console.log(sum);
+
+document.getElementById('bb').innerHTML="Total Sum is " + sum;
+
+        }
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+    </head>
+    <body id="bb">
+        <label>To change mode click here</label>
+        <button onclick="abc(this)">MODE</button>
+   <script>
+    var m=false;
+    function abc(t)
+    {
+        var b=document.getElementById('bb');
+if(m===false)
+{
+b.style.backgroundColor="grey";
+b.style.color="white";
+m=true;
+}
+else
+{
+    b.style.backgroundColor="white";
+b.style.color="black";
+m=false;
+}
+    }
+   </script>
+    </body>
+</html>

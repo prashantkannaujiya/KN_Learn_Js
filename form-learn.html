@@ -1,0 +1,24 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form onsubmit="abc(event)" name="kk">
+            First name<input type="text" name="nm">
+            Last name<input type="text" name="ln">
+            <button>Save</button>
+        </form>
+        
+        <script>
+            function abc(t)
+            {
+                t.preventDefault();
+                console.dir(t);
+console.log(document.kk.nm.value);
+console.log(document.kk.ln.value);
+
+            }
+            </script>
+
+    </body>
+</html>

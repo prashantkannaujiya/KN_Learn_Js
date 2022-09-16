@@ -1,0 +1,33 @@
+<html>
+    <head>
+<style>
+    body{
+        font-size:35px;
+    }
+</style>
+    </head>
+    <body>
+        <div id="pp"></div>
+        <script>
+            var b=[];
+            var count=1;
+            var lines=+prompt('enter number of lines ')
+            for(var i=1;i<=lines;i++)
+            { var str='';
+for(var j=i;j<lines;j++)
+{
+    var z=" ";
+   str=str+z;
+}
+for(var k=1;k<=count;k++){
+    str=str+'*';
+}
+var b=document.createElement('div')
+b.innerHTML=str;
+document.querySelector('#pp').append(b);
+count=count+2;
+            }
+            console.log(b)
+        </script>
+    </body>
+</html>

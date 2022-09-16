@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <style>
+        div {
+            text-align: center;
+            margin-bottom: 10px;
+
+        }
+
+        button {
+            border: 0px;
+            background-color: aliceblue;
+        }
+
+        table {
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button onclick="but('p')"><-- </button>
+                <button id="first" onclick="tab(this)">1</button>
+                <button id="second" onclick="tab(this)">2</button>
+                <button id="third" onclick="tab(this)">3</button>
+                <button onclick="but('n')">--></button>
+                <input type="text" placeholder="type to search" id="search">
+                <button id="serbut" onclick="find()">Find</button>
+    </div>
+    
+    <table border="1">
+
+    </table>
+    <script>
+        if (document.querySelector('#first').innerHTML == '1') {
+
+            tab(document.querySelector('#first'));
+        }
+
+        var a = [];
+        var c = 0;
+        function but(k) {
+            if (k == 'p') {
+                if (document.querySelector('#first').innerHTML == '1') {
+                    alert('You are already on first page');
+                }
+                else {
+                    create(k);
+                }
+            }
+            if (k == 'n') {
+                if (document.querySelector('#first').innerHTML == '25') {
+                    alert('You are already on the last page');
+                }
+                else {
+                    create(k);
+                }
+            }
+        }
+        function create(z) {
+            var c = 0;
+            if (z == 'n') {
+                var h = parseInt(document.querySelector('#first').innerHTML);
+                h = h + 3;
+                document.querySelector('#first').innerHTML = h;
+                document.querySelector('#second').innerHTML = h + 1;
+                document.querySelector('#third').innerHTML = h + 2;
+            }
+            else {
+                var h = parseInt(document.querySelector('#first').innerHTML);
+                h = h - 3;
+                document.querySelector('#first').innerHTML = h;
+                document.querySelector('#second').innerHTML = h + 1;
+                document.querySelector('#third').innerHTML = h + 2;
+            }
+            if (document.querySelector('#first').innerHTML == '25') {
+                document.querySelector('#second').style.display = 'none';
+                document.querySelector('#third').style.display = 'none';
+            }
+            else {
+                document.querySelector('#second').style.display = 'inline';
+                document.querySelector('#third').style.display = 'inline';
+
+            }
+        }
+        function tab(t) {
+            var m = t.innerHTML;
+            console.log(t);
+          
+            m = parseInt(m);
+            document.querySelector('table').innerHTML = '';
+            var k = document.createElement('tr');
+            var p = document.createElement('td');
+            var q = document.createElement('td');
+            document.querySelector('table').appendChild(k);
+            k.appendChild(p);
+            k.appendChild(q);
+            p.innerHTML = 'Country';
+            q.innerHTML = 'Flag';
+
+            fetch('https://restcountries.com/v2/all')
+                .then(function (res) {
+                    res.json().then(function (countries) {
+a=countries;
+                        for (var i = (m * 10 - 10); i < m * 10; i++) {
+
+                            var k = document.createElement('tr');
+                            var p = document.createElement('td');
+                            var q = document.createElement('td');
+
+                            q.style.backgroundImage = 'url(' + countries[i].flag + ')';
+                            q.style.backgroundSize = 'cover';
+                            q.style.backgroundPosition = 'center';
+                            q.style.height = '100px';
+                            q.style.width = '150px';
+
+                            p.innerHTML = countries[i].name;
+
+                            k.appendChild(p);
+                            k.appendChild(q);
+                            document.querySelector('table').appendChild(k)
+                        }
+
+                    });
+                }).catch(function(err){
+                    alert(err);
+                })
+        }
+        function find(){
+            var w=document.getElementById('search');
+            var s=w.value;
+           console.log("inside find");
+                      for(var i=0;i<250;i++)
+{ 
+    var n=a[i].name;
+    console.log(s.length)
+    console.log(n.length)
+    for(var j=0;j<n.length;j++)
+    {var p; 
+for(var k=j;k<s.length;j++)
+{ 
+    p=p+n.charAt(k);
+console.log(n.charAt(k))
+}
+console.log(p);
+if(s==p)
+{
+    document.querySelector('table').innerHTML = '';
+    var k = document.createElement('tr');
+                            var p = document.createElement('td');
+                            var q = document.createElement('td');
+
+                            q.style.backgroundImage = 'url(' + countries[i].flag + ')';
+                            q.style.backgroundSize = 'cover';
+                            q.style.backgroundPosition = 'center';
+                            q.style.height = '100px';
+                            q.style.width = '150px';
+
+                            p.innerHTML = countries[i].name;
+
+                            k.appendChild(p);
+                            k.appendChild(q);
+                            document.querySelector('table').appendChild(k)
+                            break;
+}
+
+    }
+
+}
+                    
+        
+    }
+    </script>
+</body>
+
+</html>

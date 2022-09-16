@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <style>
+        .main {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        .main div {
+            width: 170px;
+            height: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button onclick="deal()">DEAL</button>
+    </div>
+    <div class="main">
+        <div class="pp" id="1" onclick="game(this);check(this)">1</div>
+        <div class="pp" id="2" onclick="game(this);check(this)">2</div>
+        <div class="pp" id="3" onclick="game(this)">3</div>
+    </div>
+    <div class="main">
+        <div class="pp" id="4" onclick="game(this)">4</div>
+        <div class="pp" id="5" onclick="game(this)">5</div>
+        <div class="pp" id="6" onclick="game(this)">6</div>
+    </div>
+    <div class="main">
+        <div class="pp" id="7" onclick="game(this)">7</div>
+        <div class="pp" id="8" onclick="game(this)">8</div>
+        <div class="pp" id="9" onclick="game(this)">9</div>
+    </div>
+    <div class="main">
+        <div class="pp" id="10" onclick="game(this)">10</div>
+        <div class="pp" id="11" onclick="game(this)">11</div>
+        <div class="pp" id="12" onclick="game(this)">12</div>
+
+    </div>
+    <script>
+ 
+        var fc;
+        var sc;
+        init();
+        var pic = ['./img/helmet-1.png', './img/potion-1.png', './img/ring-1.png', './img/scroll-1.png', './img/shield-1.png', './img/sword-1.png', './img/helmet-1.png', './img/potion-1.png', './img/ring-1.png', './img/scroll-1.png', './img/shield-1.png', './img/sword-1.png']
+
+        function deal() {
+            init();
+            var points = [40, 100, 1, 5, 25, 10];
+
+            for (i = pic.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * i)
+                k = pic[i]
+                pic[i] = pic[j]
+                pic[j] = k
+            }
+            console.log(pic);
+        }
+        function init() {
+            for (var i = 0; i < 12; i++) {
+
+
+    var k = document.getElementsByClassName('pp')[i];
+              //  k.style.backgroundImage = 'url("./img/cover.png")';
+                k.style.backgroundPosition = 'center';
+
+               
+
+
+            }
+        }
+        function game(t) {
+
+            console.log(t)
+            t.style.backgroundImage = 'url(' + pic[t.id - 1] + ')';
+            console.log(t)
+            var x=document.getElementById(t.id);
+            console.log(x);
+        }
+        function check(t)
+        {
+            var x=document.getElementById(t.id);
+            console.log(x);
+        }
+    </script>
+</body>
+
+</html>

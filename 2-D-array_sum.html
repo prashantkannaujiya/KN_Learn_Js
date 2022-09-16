@@ -1,0 +1,58 @@
+
+<html>
+
+    <head>
+    
+    </head>
+    
+    <body>
+        <script>
+            var row = +prompt('enter the number of rows');
+            var col = +prompt('enter the number of columns ')
+            var arr = [];
+            var a =[];
+            for(var i=0;i<col;i++)
+            {
+                arr[i]=' ';
+            }
+for(var i=0;i<row;i++)
+{
+            a[i]=arr.map(function (x, y) {
+               return ' ';
+            });
+        }
+
+            if (row === col) {
+               var z= pro();
+            }
+            else {
+                alert("not a square matrix")
+            }
+            function pro() {
+                console.log('yup')
+                var sum = 0;
+                for (var x = 0; x < row; x++) {
+                    for (var y = 0; y < col; y++) {
+                        a[x][y] = +prompt("Enter the value");
+                    }
+                }
+                console.log(a);
+                console.log(a[1][1]);
+                for (var i = row - 1; i >= 0; i--) {
+                    sum = sum + a[row - 1 - i][i] + a[i][i];
+                    console.log(sum)
+                }
+                var k = document.createElement('h1');
+                k.innerHTML = "the sum of diagonal element is " + sum;
+                document.querySelector('body').append(k);
+                k = document.createElement('h1');
+                k.innerHTML=a;
+                document.querySelector('body').append(k);
+            }
+    
+        </script>
+    
+    
+    </body>
+    
+    </html>

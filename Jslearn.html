@@ -1,0 +1,61 @@
+<html>
+    <head>
+<style>
+  #de{
+    width:10px;
+    height:16px;
+
+  }
+</style>
+    </head>
+    <body>
+        
+        
+        <label>Enter your name</label>
+        <input type="text" id="nm" >
+        <button onclick="abc(this)">Save</button>
+        <h1 id="kk"></h1>
+   <ul id="bb">
+
+   </ul>
+    <script>
+    var h;
+var k;
+var ar=[];
+        function abc(t)
+        {     
+         // document.getElementById('bb').innerHTML=''; 
+            var k=document.getElementById("nm").value;
+            ar.push(k);
+            console.log(k);
+           ar.forEach(function(a){
+            var p=document.createElement("ul");
+          p.innerHTML=a;
+          document.getElementById("bb").appendChild(p);
+          var z=document.createElement('button');
+          z.value='del';
+          z.id="de";
+          p.append(z);
+          //z.addEventListener('click',del(p),null);
+          z.onclick=()=>{
+            p.remove();
+          }
+           });
+         console.log(ar);
+
+        }
+        function del(t)
+        {
+          t.remove();
+        }
+        function abcc(t)
+        {
+             h=document.getElementById('nm').value;
+             k=document.createElement('li');
+           console.dir(t);
+            document.getElementById('bb').appendChild(k);
+            k.innerHTML=h;
+        }
+    </script>
+     </body>
+</html>
